@@ -1,9 +1,7 @@
-# ReachOut Scraper
+# aas-todesopfer-scraper
 
-Scraping right-wing incidents in Berlin, Germany as monitored by the NGO [ReachOut](https://www.reachoutberlin.de/).
-
--   Website: <https://www.reachoutberlin.de/de/chronik>
--   Data: <https://morph.io/rechtegewalt/reachout-scraper>
+-   Website: <https://www.amadeu-antonio-stiftung.de/todesopfer-rechter-gewalt/>
+-   Data: <https://morph.io/rechtegewalt/aas-todesopfer-scraper>
 
 ## Usage
 
