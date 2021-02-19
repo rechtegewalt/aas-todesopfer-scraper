@@ -1,0 +1,4 @@
+# Ignore output of scraper
+data.sqlite
+.vscode
+scraperwiki.sqlite

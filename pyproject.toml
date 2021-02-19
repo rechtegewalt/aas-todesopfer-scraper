@@ -1,0 +1,22 @@
+[tool.poetry]
+authors = ["Johannes Filter <hi@jfilter.de>"]
+description = ""
+license = "MIT"
+name = "aas-todesopfer-scraper"
+version = "0.0.0"
+
+[tool.poetry.dependencies]
+beautifulsoup4 = "^4.9.3"
+dataset = "^1.4.3"
+dateparser = "^1.0.0"
+get-retries = "^0.1.1"
+lxml = "^4.6.2"
+python = "^3.6.10"
+tqdm = "^4.56.0"
+
+[tool.poetry.dev-dependencies]
+black = {version = "^20.8b1", allow-prereleases = true}
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
