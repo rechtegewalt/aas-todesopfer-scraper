@@ -67,7 +67,7 @@ def process_report(url, data):
     data["title"] = title
     data["rg_id"] = rg_id
 
-    print(data)
+    # print(data)
 
     tab_incidents.upsert(data, ["rg_id"])
 
