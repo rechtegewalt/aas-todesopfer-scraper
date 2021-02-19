@@ -15,6 +15,7 @@ tab_chronicles = db["chronicles"]
 tab_chronicles.upsert(
     {
         "iso3166_1": "DE",
+        "region": "Deutschland",
         "chronicler_name": "Todesopfer rechter Gewalt, Amadeu Antonio Stiftung",
         "chronicler_description": """Seit Jahren beklagt die Amadeu Antonio Stiftung die große Diskrepanz zwischen der Anerkennung von Todesopfern rechter Gewalt durch staatliche Behörden und der Zählung durch unabhängige Organisationen sowie Journalistinnen und Journalisten.
 
