@@ -15,7 +15,6 @@ tab_chronicles = db["chronicles"]
 tab_chronicles.upsert(
     {
         "iso3166_1": "DE",
-        "region": "Deutschland",
         "chronicler_name": "Todesopfer rechter Gewalt, Amadeu Antonio Stiftung",
         "chronicler_description": """Seit Jahren beklagt die Amadeu Antonio Stiftung die große Diskrepanz zwischen der Anerkennung von Todesopfern rechter Gewalt durch staatliche Behörden und der Zählung durch unabhängige Organisationen sowie Journalistinnen und Journalisten.
 
@@ -60,7 +59,11 @@ def process_report(url, data):
     source_link = entry.select_one(".socials .text-grey-light a")
     if source_link:
         sources.append(
-            {"rg_id": rg_id, "name": source_link.get_text().strip(), "url": source_link.get("href")}
+            {
+                "rg_id": rg_id,
+                "name": source_link.get_text().strip(),
+                "url": source_link.get("href"),
+            }
         )
 
     data["chronicler_name"] = "Todesopfer rechter Gewalt, Amadeu Antonio Stiftung"
@@ -85,9 +88,10 @@ for x in initial_soup.select("article"):
     rows = [x.get_text().strip() for x in left_col.select(".text-grey-light")]
     date = parse(date, languages=["de"])
 
-    city = rows[0]
+    state = rows[0].split("(")[-1].replace(")", "").strip()
+    city = rows[0].split("(")[0].strip()
     official = False
-    age = 1
+    age = None
 
     if len(rows) > 1:
         age = rows[1]
@@ -96,21 +100,3 @@ for x in initial_soup.select("article"):
         official = "(staatlich anerkannt)" in rows[2]
 
     process_report(url, dict(url=url, age=age, official=official, date=date, city=city))
-
-
-# last_page = re.findall(
-#     r"\d+", initial_soup.select_one("li.pager-last.last a").get("href")
-# )[0]
-
-# last_page = int(last_page)
-
-# process_page(initial_soup)
-
-# print(last_page)
-
-# i = 1
-# while i <= last_page:
-#     url = BASE_URL + f"?page={i}"
-#     print(url)
-#     process_page(fetch(url))
-#     i += 1
