@@ -76,7 +76,7 @@ def process_report(url, data):
     tab_incidents.upsert(data, ["rg_id"])
 
     for x in sources:
-        tab_sources.upsert(x, ["rg_id", "name", "date"])
+        tab_sources.upsert(x, ["rg_id", "name", "url"])
 
 
 initial_soup = fetch(BASE_URL)
