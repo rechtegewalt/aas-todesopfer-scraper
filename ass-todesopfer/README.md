@@ -20,7 +20,3 @@ For Morph:
 ## Morph
 
 This is scraper runs on [morph.io](https://morph.io). To get started [see the documentation](https://morph.io/documentation).
-
-## License
-
-MIT
